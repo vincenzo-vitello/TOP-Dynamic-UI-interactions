@@ -14,6 +14,7 @@ module.exports = {
     port: 3000,
     open: true,
     hot: true,
+    watchFiles: ['src/**/*.{html,css,js,png,jpg,jpeg,gif,svg,json}'],
   },
   module: {
     rules: [
@@ -42,6 +43,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
+      inject: 'body',
     }),
   ],
 };

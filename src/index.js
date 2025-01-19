@@ -1,3 +1,11 @@
 import './styles/style.css';
+import handleDropdownInteraction from './modules/dropdown';
 
-console.log('Frontend Boilerplate Ready!');
+window.addEventListener('load', () => {
+  const dropdownArr = document.querySelectorAll('.menu-item');
+  dropdownArr.forEach((dropdown) => {
+    const selector = dropdown.querySelector('.selector');
+    const options = dropdown.querySelector('.options');
+    handleDropdownInteraction(selector, options, dropdownArr);
+  });
+});

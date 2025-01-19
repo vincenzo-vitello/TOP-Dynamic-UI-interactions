@@ -1,7 +1,67 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#dropdown-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    width: 90%;
+    margin: auto;
+}
+
+.selector, .options{
+    border: 2px solid #081018;
+    text-align: center;
+    padding: 10px;
+}
+.selector {
+    position: relative;
+    height: 40px;
+}
+.selector:hover{
+    background-color: orange;
+}
+.options {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    border: 2px solid #081018;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    max-height: 80vh;
+    width: 90vw;
+}
+
+.options.active {
+    display: block;
+}
+
+.options ul {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.options ul li {
+    display: flex;
+    flex-direction: column;
+}
+.image-container {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+.options ul li img {
+    height: 100%;
+    max-width: 100%;
+    opacity: .7;
+    object-fit: cover;
+}
+.options ul li img:hover{
+    transform: scale(1.1);
+    opacity: 1;
 }
