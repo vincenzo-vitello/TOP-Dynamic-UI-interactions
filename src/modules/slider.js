@@ -5,6 +5,7 @@ export function initialRendering() {
   images[0].classList.add('active');
   dots[0].classList.add('active');
 }
+
 function updateSlider(counter) {
   images.forEach((image) => image.classList.remove('active'));
   dots.forEach((dot) => dot.classList.remove('active'));
@@ -67,4 +68,15 @@ export function handleClickOnDots() {
       images[index].classList.add('active');
     });
   });
+}
+export function updateSliderTimer() {
+  let sliderCounter = 0;
+  setInterval(() => {
+    if (sliderCounter === images.length - 1) {
+      sliderCounter = 0;
+    } else {
+      sliderCounter += 1;
+    }
+    updateSlider(sliderCounter);
+  }, 5000);
 }
