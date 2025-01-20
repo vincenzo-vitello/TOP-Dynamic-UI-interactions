@@ -1,5 +1,6 @@
 import './styles/style.css';
 import handleDropdownInteraction from './modules/dropdown';
+import { handleSlider, initialRendering, handleClickOnDots } from './modules/slider';
 
 window.addEventListener('load', () => {
   const dropdownArr = document.querySelectorAll('.menu-item');
@@ -8,4 +9,7 @@ window.addEventListener('load', () => {
     const options = dropdown.querySelector('.options');
     handleDropdownInteraction(selector, options, dropdownArr);
   });
+  initialRendering();
+  handleSlider();
+  handleClickOnDots();
 });
